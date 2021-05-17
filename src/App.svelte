@@ -1,20 +1,44 @@
 <script>
-	export let name;
-	let secretWord = ""
-	let age = 17
+	let head = ""
+	let answer = ""
+	let points = 0
+	let question = 0
+	let questions = [
+		["Vad heter hund på franska", "chien"],
+		["Vad heter vår programmering lärare", "einar"],
+		["Vilken frukt är grön", "päron"],
+		["Vilket år blev stefan löven stadsminister", "2018"],
+		["Vilken är Kanye west mest streamade låt", "Stronger"]
+	]
+	
 
-	function levelUp() {
-		if (age < 30) {
-			age = age + 1
+	function checkAnswer() {
+		if (answer.toLowerCase() == questions[question][1]) {
+			points = points + 1
+			question = question + 1
+			answer = ""
+		} else {
+			question = question + 1
+			answer = ""
 		}
+
+		if (question > 4) {
+			head = "du är klar"
+		}
+
+		console.log(questions[question][1])
+		console.log("nu körs checkAnswer")
+		return head
 	}
+	
 </script>
 
 <main>
-	<h1>Hello {secretWord}!</h1>
-	<p>{age}</p>
-	<button on:click={levelUp}>level up</button>
-	<input type="password" bind:value={secretWord}>
+	<h1>{questions[question][0]}?!</h1>
+	<p>{points}</p>
+	<button on:click={checkAnswer}>Check answer</button>
+	<input type="text" bind:value={answer}>
+	<h1>{head}</h1>
 </main>
 
 <style>
@@ -26,7 +50,7 @@
 	}
 
 	h1 {
-		color: #ff3e00;
+		color: #00ff4c;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
