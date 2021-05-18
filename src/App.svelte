@@ -1,4 +1,5 @@
 <script>
+	let gron = "#00ff4c"
 	let head = ""
 	let answer = ""
 	let points = 0
@@ -18,9 +19,11 @@
 			points = points + 1
 			question = question + 1
 			answer = ""
+			document.getElementById("titel").style.color = "green";
 		} else {
 			question = question + 1
 			answer = ""
+			document.getElementById("titel").style.color = "red";
 		}
 
 		if (question > 4) {
@@ -39,7 +42,7 @@
 </script>
 
 <main>
-	<h1>{questions[question][0]}?!</h1>
+	<h1 id="titel">{questions[question][0]}?!</h1>
 	<p>{points}</p>
 	<button on:click={checkAnswer}>Check answer</button>
 	<input type="text" bind:value={answer}>
@@ -47,6 +50,8 @@
 </main>
 
 <style>
+
+
 	main {
 		text-align: center;
 		padding: 1em;
@@ -55,7 +60,6 @@
 	}
 
 	h1 {
-		color: #00ff4c;
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
