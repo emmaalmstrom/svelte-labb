@@ -5,10 +5,11 @@
 	let question = 0
 	let questions = [
 		["Vad heter hund på franska", "chien"],
-		["Vad heter vår programmering lärare", "einar"],
-		["Vilken frukt är grön", "päron"],
-		["Vilket år blev stefan löven stadsminister", "2018"],
-		["Vilken är Kanye west mest streamade låt", "Stronger"]
+		["Vilken slags cancer hade Walter White", "lungcancer"],
+		["Vad är första ingredigensen i majonäs", "rapsolja"],
+		["Vilken är Kanye west mest streamade låt", "stronger"],
+		["Vad heter världens bästa lärare", "einar"],
+		["Bra jobbat"]
 	]
 	
 
@@ -23,7 +24,11 @@
 		}
 
 		if (question > 4) {
-			head = "du är klar"
+			if (points == 5) {
+				head = "Du fick 5/5 rätt, shit va allmänbildad du är!"
+			} else {
+				head = "Du fick " + points + "/5 rätt, du har förbättringspotential!"
+			}
 		}
 
 		console.log(questions[question][1])
