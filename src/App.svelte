@@ -19,11 +19,11 @@
 			points = points + 1
 			question = question + 1
 			answer = ""
-			document.getElementById("titel").style.color = "green";
+			document.getElementById("titel").style.backgroundColor = "green";
 		} else {
 			question = question + 1
 			answer = ""
-			document.getElementById("titel").style.color = "red";
+			document.getElementById("titel").style.backgroundColor = "red";
 		}
 
 		if (question > 4) {
@@ -43,27 +43,44 @@
 
 <main>
 	<h1 id="titel">{questions[question][0]}?!</h1>
-	<p>{points}</p>
-	<button on:click={checkAnswer}>Check answer</button>
 	<input type="text" bind:value={answer}>
+	<button on:click={checkAnswer}>Check answer</button>
+	<p>{points}</p>
 	<h1>{head}</h1>
 </main>
 
 <style>
 
-
+	
 	main {
 		text-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+		background-image: linear-gradient(rgb(255, 0, 255), yellow);
+		height: 100%;
 	}
 
 	h1 {
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+		font-size: 70px;
 	}
+	button {
+		border-radius: 100px;
+		width: 150px;
+	}
+	
+	p {
+		font-size: 30px;
+	}
+
+	input {
+		width: 150px;
+		border-radius: 100px;
+	}
+
 
 	@media (min-width: 640px) {
 		main {
