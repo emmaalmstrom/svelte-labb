@@ -1,3 +1,5 @@
+Detta är ett test på hur allmänbildad du är. Lycka till!
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
